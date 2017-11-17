@@ -1,9 +1,11 @@
 node{
-  def appName = "catalogue"
-  def group = "infracloudio"
+  environment{
+    GROUP = 'infracloudio'
+  }
   checkout scm
   
   stage('Run build'){
+    
     sh("scripts/build.sh")
   }
 }
