@@ -4,12 +4,6 @@ node{
   checkout scm
   
   stage('Run build'){
-    steps{
-      environment{
-        GROUP = $group
-      }
-      
-      sh("scripts/build.sh")
-    }
+    sh("scripts/build.sh")
   }
 }
