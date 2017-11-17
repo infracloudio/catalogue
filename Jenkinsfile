@@ -3,7 +3,13 @@ node{
   def group = "infracloudio"
   checkout scm
   
-  stage 'Run build'{
-  sh("export GROUP=$group && scripts/build.sh")
+  stage('Run build'){
+    steps{
+      environment{
+        GROUP = $group
+      }
+      
+      sh("scripts/build.sh")
+    }
   }
 }
