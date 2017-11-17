@@ -1,7 +1,6 @@
+env.GROUP = 'infracloudio'
 node{
-  environment{
-    GROUP = 'infracloudio'
-  }
+  
   checkout scm
   
   stage('Run build'){
